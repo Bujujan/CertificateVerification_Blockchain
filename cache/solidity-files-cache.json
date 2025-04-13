@@ -1,0 +1,40 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "D:\\VIT\\vit_6th_sem\\Blockchain\\Project\\testCert\\contracts\\CertificateVerification.sol": {
+      "lastModificationDate": 1744538759271,
+      "contentHash": "3237a2945f787236d34e928636eb34e5",
+      "sourceName": "contracts/CertificateVerification.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "CertificateVerification"
+      ]
+    }
+  }
+}
