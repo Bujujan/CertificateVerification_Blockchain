@@ -3,29 +3,29 @@ const fs = require("fs");
 const path = require("path");
 
 async function main() {
-  // Get the contract factory
+  // Deploy UserManagement contract
+  const UserManagement = await hre.ethers.getContractFactory("UserManagement");
+  const userManagement = await UserManagement.deploy();
+  await userManagement.deployed();
+  console.log("UserManagement deployed to:", userManagement.address);
+  
+  // Deploy CertificateVerification contract with UserManagement address
   const CertificateVerification = await hre.ethers.getContractFactory("CertificateVerification");
-  
-  // Deploy the contract
-  const certificateVerification = await CertificateVerification.deploy();
+  const certificateVerification = await CertificateVerification.deploy(userManagement.address);
   await certificateVerification.deployed();
-
   console.log("CertificateVerification deployed to:", certificateVerification.address);
-
-  // Get the contract ABI
-  const artifact = require("../artifacts/contracts/CertificateVerification.sol/CertificateVerification.json");
   
-  // Create the config object
+  // Save contract addresses and ABIs
   const config = {
-    address: certificateVerification.address,
-    abi: artifact.abi
+    userManagementAddress: userManagement.address,
+    certificateAddress: certificateVerification.address,
+    userManagementABI: JSON.parse(userManagement.interface.format('json')),
+    certificateABI: JSON.parse(certificateVerification.interface.format('json'))
   };
-
-  // Write the contract address and ABI to a file
-  fs.writeFileSync(
-    path.join(__dirname, "../public/contract-config.json"),
-    JSON.stringify(config, null, 2)
-  );
+  
+  const configPath = path.join(__dirname, '../public/contract-config.json');
+  fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
+  console.log("Contract configuration saved to:", configPath);
 }
 
 main()

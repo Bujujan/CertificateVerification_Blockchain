@@ -1,10 +1,47 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "D:\\VIT\\vit_6th_sem\\Blockchain\\Project\\testCert\\contracts\\CertificateVerification.sol": {
-      "lastModificationDate": 1744538759271,
-      "contentHash": "3237a2945f787236d34e928636eb34e5",
+    "C:\\Users\\Skaloy\\Desktop\\Coding\\blockproject\\CertificateVerification_Blockchain\\contracts\\CertificateVerification.sol": {
+      "lastModificationDate": 1748205983575,
+      "contentHash": "b357ce41903944333e6f5ce0f3f5b176",
       "sourceName": "contracts/CertificateVerification.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./UserManagement.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "CertificateVerification"
+      ]
+    },
+    "C:\\Users\\Skaloy\\Desktop\\Coding\\blockproject\\CertificateVerification_Blockchain\\contracts\\UserManagement.sol": {
+      "lastModificationDate": 1748799837049,
+      "contentHash": "cd334bb7316111ac396c06fcb6d1c32d",
+      "sourceName": "contracts/UserManagement.sol",
       "solcConfig": {
         "version": "0.8.19",
         "settings": {
@@ -33,7 +70,7 @@
         "^0.8.0"
       ],
       "artifacts": [
-        "CertificateVerification"
+        "UserManagement"
       ]
     }
   }
